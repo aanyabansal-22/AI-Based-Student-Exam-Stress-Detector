@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Register</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+
+    .box {
+        width: 380px;
+        padding: 35px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(15px);
+        border-radius: 20px;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+    }
+
+    h1 {
+        margin-bottom: 10px;
+        font-size: 22px;
+    }
+
+    label {
+        font-size: 14px;
+        display: block;
+        text-align: left;
+        margin-left: 8px;
+    }
+
+    input {
+        width: 90%;
+        padding: 12px;
+        margin-top: 6px;
+        margin-bottom: 15px;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        font-size: 14px;
+    }
+
+    button {
+        width: 95%;
+        padding: 12px;
+        border: none;
+        border-radius: 12px;
+        background: white;
+        color: #4f8cff;
+        font-size: 15px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    a {
+        color: white;
+        text-decoration: underline;
+    }
+</style>
+
+</head>
+<body>
+<div class="box">
+
+<h1>Create an Account</h1>
+<hr style="border: 0; height: 1px; background: white; margin-bottom: 15px;">
+<form onsubmit="return checkRegister()">
+<label>Full Name:</label>
+<input type="text" id="name" pattern="[A-Za-z ]+" required>
+<label>Email:</label>
+<input type="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+<label>Password:</label>
+<input type="password" id="password" minlength="8" required>
+<label>Confirm Password:</label>
+<input type="password" id="confirm" minlength="8" required>
+<button type="submit">Register</button>
+<p>Already have an account? <a href="login.html">Login</a></p>
+</form>
+</div>
+<script>
+function checkRegister() {
+let p = document.getElementById("password").value;
+let c = document.getElementById("confirm").value;
+if (p !== c) { 
+alert("Passwords do not match");
+return false;
+}
+
+    alert("Registration Successful");
+    window.location.href = "login.html";
+    return false;
+}
+</script>
+</body>
+</html>

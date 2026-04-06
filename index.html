@@ -60,6 +60,23 @@ button {
     font-size: 15px;
     font-weight: bold;
     cursor: pointer;
+    margin-top:5px;
+}
+
+button:hover {
+    background:#4f8cff;
+    color:white;
+}
+
+.extraBtn{
+    background:transparent;
+    border:1px solid white;
+    color:white;
+}
+
+.extraBtn:hover{
+    background:white;
+    color:#4f8cff;
 }
 
 a {
@@ -73,31 +90,46 @@ a {
 
 <div class="box">
 
-    <h1>AI BASED STUDENT EXAM STRESS DETECTOR</h1>
-    <hr style="border: 0; height: 1px; background: white; margin-bottom: 15px;">
+<h1>AI BASED STUDENT EXAM STRESS DETECTOR</h1>
 
-    <form onsubmit="return loginUser()">
+<hr style="border:0;height:1px;background:white;margin-bottom:15px;">
 
-        <label>Username:</label>
-        <input type="text" id="username" pattern="[A-Za-z ]+" required>
+<form onsubmit="return loginUser()">
 
-        <label>Password:</label>
-        <input type="password" id="password" minlength="8" required>
+<label>Username:</label>
+<input type="text" id="username" pattern="[A-Za-z ]+" required>
 
-        <button type="submit">Login</button>
+<label>Password:</label>
+<input type="password" id="password" minlength="8" required>
 
-        <p><a href="forgotpassword.html">Forgot Password?</a></p>
-        <p>Don't have an account? <a href="register.html">Register</a></p>
+<button type="submit">Login</button>
 
-    </form>
+<button type="button" class="extraBtn"
+onclick="window.location.href='register.html'">
+Register
+</button>
+
+<button type="button" class="extraBtn"
+onclick="window.location.href='stress.html'">
+Take Stress Test
+</button>
+
+<button type="button" class="extraBtn"
+onclick="window.location.href='index.html'">
+Home
+</button>
+
+<p><a href="forgotpassword.html">Forgot Password?</a></p>
+
+</form>
 
 </div>
 
 <script>
 function loginUser() {
-    alert("Login Successful!");
-    window.location.href = "stress.html";
-    return false;
+alert("Login Successful!");
+window.location.href="stress.html";
+return false;
 }
 </script>
 
